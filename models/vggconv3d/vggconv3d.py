@@ -11,9 +11,9 @@ from models.vggconv3d.pooling import GeM, TemporalMaxPool
 
 
 class VGGConv3D(nn.Module):
-    def __init__(self, in_channels: int = 3, embedding_size: int = 128):
+    def __init__(self, in_channels: int = 3, channels=(64, 128, 256, 512), embedding_size: int = 128):
         super().__init__()
-        self.backbone = VGGConv3DBackbone(in_channels)
+        self.backbone = VGGConv3DBackbone(in_channels, channels=tuple(channels))
         self.temporal_pool = TemporalMaxPool()
         self.gem = GeM()
         self.fc = nn.Linear(self.backbone.out_channels, embedding_size)
