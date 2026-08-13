@@ -15,9 +15,9 @@ import torch
 import torch.nn as nn
 
 from data.graph import normalized_adjacency
+from models.resgcn.attention import MultiHeadAttention
 from models.resgcn.blocks import BasicBlock, BottleneckBlock
 from models.resgcn.branches import build_branch_inputs, concat_branches
-from models.resgcn.attention import MultiHeadAttention
 
 
 class ResGCN(nn.Module):

@@ -5,12 +5,12 @@ stated shapes (T=59, N=17 joints, embedding size 128).
 
 import torch
 
-from models.resgcn.resgcn import ResGCN
-from models.vggconv3d.vggconv3d import VGGConv3D
+from evaluation.bayes_classifier import BayesClassifier
+from losses.supervised_contrastive import SupervisedContrastiveLoss
 from models.fusion.fusion_module import FusionModule
 from models.gait_net import GaitNet
-from losses.supervised_contrastive import SupervisedContrastiveLoss
-from evaluation.bayes_classifier import BayesClassifier
+from models.resgcn.resgcn import ResGCN
+from models.vggconv3d.vggconv3d import VGGConv3D
 
 B, T, N, H, W = 4, 59, 17, 80, 80
 EMBED = 128

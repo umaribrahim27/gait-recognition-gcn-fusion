@@ -10,7 +10,7 @@ Fit on gallery embeddings (per class mean/covariance + prior), applied to
 probe embeddings.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import torch
 

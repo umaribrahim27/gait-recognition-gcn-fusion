@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 
 from models.vggconv3d.conv_blocks import VGGConv3DBackbone
-from models.vggconv3d.pooling import TemporalMaxPool, GeM
+from models.vggconv3d.pooling import GeM, TemporalMaxPool
 
 
 class VGGConv3D(nn.Module):

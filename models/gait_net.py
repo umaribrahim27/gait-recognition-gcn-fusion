@@ -4,9 +4,9 @@ fusion module (Fig. 1 overview)."""
 import torch
 import torch.nn as nn
 
+from models.fusion.fusion_module import FusionModule
 from models.resgcn.resgcn import ResGCN
 from models.vggconv3d.vggconv3d import VGGConv3D
-from models.fusion.fusion_module import FusionModule
 
 
 class GaitNet(nn.Module):

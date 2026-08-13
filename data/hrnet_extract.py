@@ -43,7 +43,7 @@ class HRNetPoseExtractor:
 
     def __init__(self, config: HRNetConfig = HRNetConfig()):
         try:
-            from mmpose.apis import init_model, inference_topdown
+            from mmpose.apis import inference_topdown, init_model
         except ImportError as exc:
             raise ImportError(
                 "mmpose is required for real HRNet inference. "
