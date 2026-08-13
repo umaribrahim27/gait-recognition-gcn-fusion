@@ -1,0 +1,26 @@
+# ResGCN branch training config.
+# Hyperparameters taken from the paper's Sec. 4.2 (Implementation Details)
+# where stated; model dims are inferred defaults (see README).
+
+model:
+  num_joints: 17
+  base_channels: 64
+  main_channels: 256
+  num_heads: 8
+  head_dim: 32
+  embedding_size: 128
+
+data:
+  sequence_length: 59      # T, paper Sec. 4.2
+  num_joints: 17
+
+optim:
+  name: adam
+  schedule: one_cycle
+  max_lr: 0.05              # paper Sec. 4.2
+  epochs: 200                # paper Sec. 4.2
+  batch_size: 512            # paper Sec. 4.2
+
+loss:
+  name: supervised_contrastive
+  temperature: 0.01          # paper Sec. 4.2

@@ -1,0 +1,25 @@
+# Fusion module config: combines pretrained ResGCN + VGGConv3D branch
+# embeddings (Sec. 3.4). Branch checkpoints are loaded and, per the paper's
+# late-fusion description, kept frozen (or fine-tuned, if `freeze_branches:
+# false`) while the fusion head is trained.
+
+model:
+  embedding_size: 128
+  fused_size: 128
+
+branch_checkpoints:
+  resgcn: checkpoints/resgcn_best.pt
+  vggconv3d: checkpoints/vggconv3d_best.pt
+
+freeze_branches: true
+
+optim:
+  name: adam
+  schedule: one_cycle
+  max_lr: 0.0001
+  epochs: 200
+  batch_size: 128
+
+loss:
+  name: supervised_contrastive
+  temperature: 0.01
